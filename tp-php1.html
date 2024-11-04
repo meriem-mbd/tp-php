@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil Avancé</title>
+    <style>
+        /* CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffe6f0; /* Couleur rose pâle */
+            color: #333;
+            line-height: 1.6;
+            padding: 1em;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        section {
+            padding: 1em;
+            margin: 1em 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        ul, ol {
+            margin-left: 1.5em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+            font-size: 1em;
+        }
+
+        th, td {
+            padding: 0.75em;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 1em;
+        }
+
+        input, textarea, button {
+            padding: 0.75em;
+            margin-top: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ELMABADY Meriem</h1>
+    </header>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Bonjour ! Je suis une étudiante en 3e année d’ingénierie info et réseau à EMSI. J'adore résoudre des problèmes et créer des applications innovantes.</p>
+        <img src="https://th.bing.com/th/id/R.f8326b17171f20f55ae77e871cda65c3?rik=s2fpwTALeF1m5A&pid=ImgRaw&r=0" alt="Votre image" style="width: 20%; height: auto; border-radius: 50%; margin-top: 1em;">
+    </section>
+
+    <section id="hobbies-objectifs">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Lecture</li>
+            <li>Programmation</li>
+        </ul>
+
+        <h2>Objectifs pour cette année</h2>
+        <ol>
+            <li>Améliorer mes compétences en JavaScript</li>
+            <li>Contribuer à des projets open-source</li>
+            <li>Obtenir une certification en développement web</li>
+        </ol>
+    </section>
+
+    <section id="amis">
+        <h2>Tableau d'Amis</h2>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>Ville</th>
+                <th>Profil</th>
+            </tr>
+            <tr>
+                <td>AYA</td>
+                <td>21</td>
+                <td>Casablanca</td>
+                <td><a href="https://profil-alice.com">Lien vers le profil</a></td>
+            </tr>
+            <tr>
+                <td>Amina</td>
+                <td>19</td>
+                <td>Casablanca</td>
+                <td><a href="https://profil-bob.com">Lien vers le profil</a></td>
+            </tr>
+            <tr>
+                <td>Wiam</td>
+                <td>24</td>
+                <td>Marrakech</td>
+                <td><a href="https://profil-charlie.com">Lien vers le profil</a></td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contactForm">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <script>
+        // JavaScript pour la validation du formulaire
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Veuillez remplir tous les champs.");
+                event.preventDefault();
+            } else if (!email.includes("@") || !email.includes(".")) {
+                alert("Veuillez entrer une adresse email valide.");
+                event.preventDefault();
+            } else {
+                alert("Formulaire soumis avec succès !");
+            }
+        });
+    </script>
+</body>
+</html>
